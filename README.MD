@@ -1,4 +1,4 @@
-The LinReg Library is written in C++. In contrains 2 functions that calculate the slope and y intercepts of a line of fit for a set of points.
+The LinReg Library is written in C++. In contains 2 functions that calculate the slope and y intercepts of a line of fit for a set of points.
 Math equation for linear regression:
 Y = a + bx
 
