@@ -1,10 +1,25 @@
+
+
+
 import ctypes
 import matplotlib.pyplot as plt
+import sys
+import os
+
+if hasattr(sys, '_MEIPASS'):
+    base_path = sys._MEIPASS
+else:
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+lib_path = os.path.join(base_path, "/Users/vivaan/CLionProjects/LinReg/liblinreg.dylib")
+
+if not os.path.exists(lib_path):
+    print(f"Error: Could not find {lib_path}")
+    sys.exit(1)
+
+lib = ctypes.CDLL(lib_path)
 
 
-lib = ctypes.CDLL(
-    "/Users/vivaananika/CLionProjects/linreg.cpp/liblinreg.dylib"
-)
 
 lib.slope.argtypes = (
     ctypes.POINTER(ctypes.c_double),
@@ -41,10 +56,8 @@ print("Y int =", b)
 
 xPred = float(input("X value for prediction:\n"))
 print((xPred * m) + b)
-yAc = float(input("*Optional* Actual Y Value (Copy predicted value in enter it to view graph if you want to skip):\n"))
 
 
-plt.scatter(xPred, yAc, color='green', label="Actual value")
 plt.scatter(xPred, (xPred * m) + b,color='red', label="Predicted Value")
 
 
