@@ -14,7 +14,7 @@ The project uses a "bridge" approach:
 4. **Math equation for linear regression:** Y = a + bx, a = [ (Σy)(Σx²) − (Σx)(Σxy) ] / [ n(Σx²) − (Σx)² ], b = [ n(Σxy) − (Σx)(Σy) ] / [ n(Σx²) − (Σx)² ]
 
 
-## 📁 Files in this Repo
+## Files in this Repo
 - `LinearRegressionGraph.py`: The main Python script.
 - `LinReg.cpp`: The human-readable C++ source code.
 - `liblinreg.dylib`: The compiled machine-code library (Apple Silicon).
@@ -34,7 +34,6 @@ If you want to run the code manually, ensure you have Python 3.14+ and Matplotli
 pip install matplotlib
 python3 LinearRegressionGraph.py
 ```
-![Photos](image-url)
 
 
 
